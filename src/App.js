@@ -132,14 +132,17 @@ function App() {
                     const message = formData.get('message');
                     
                     try {
-                      // Use the full URL in production, relative in development
-                      const apiUrl = process.env.NODE_ENV === 'production' 
-                        ? 'https://your-vercel-app.vercel.app/api/send-email'
-                        : '/api/send-email';
+                      // First, test if the API is reachable
+                      const testResponse = await fetch('/api/test');
+                      const testData = await testResponse.json();
+                      console.log('Test API response:', testData);
                       
-                      console.log('Sending to:', apiUrl);
+                      if (!testResponse.ok) {
+                        throw new Error('API test failed. Please check the console for details.');
+                      }
                       
-                      const response = await fetch(apiUrl, {
+                      // If test passes, send the email
+                      const response = await fetch('/api/send-email', {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
@@ -148,17 +151,21 @@ function App() {
                       });
                       
                       const data = await response.json();
-                      console.log('Response:', data);
+                      console.log('Email API response:', data);
                       
                       if (response.ok) {
                         alert('Message sent successfully!');
                         form.reset();
                       } else {
-                        throw new Error(data.error?.message || data.error || 'Something went wrong');
+                        throw new Error(data.error?.message || data.error || 'Failed to send message');
                       }
                     } catch (error) {
-                      console.error('Error:', error);
-                      alert(`Error: ${error.message || 'Failed to send message. Please try again.'}`);
+                      console.error('Error details:', {
+                        error: error.toString(),
+                        stack: error.stack,
+                        response: error.response
+                      });
+                      alert(`Error: ${error.message || 'Failed to send message. Please check the console for details.'}`);
                     }
                   }}>
                     <input 
