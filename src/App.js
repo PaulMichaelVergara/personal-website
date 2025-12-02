@@ -21,6 +21,7 @@ const ThemeWrapper = ({ children }) => {
 };
 
 function AppContent() {
+  const { isDarkMode } = useTheme();
   return (
     <div className="site-root">
       <Navbar />
@@ -28,7 +29,7 @@ function AppContent() {
         <aside className="sidebar">
           <div className="profile-card">
             <img
-              src='/prof.png'
+              src={isDarkMode ? '/prof.png' : '/proflight.png'}
               alt="Profile"
               className="profile-img"
             />
