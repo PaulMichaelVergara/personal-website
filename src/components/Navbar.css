@@ -93,7 +93,7 @@
   color: #fff;
 }
 
-/* Style for the section cards */
+
 .section-card {
   position: relative;
   border-radius: 12px;
@@ -105,7 +105,7 @@
   transform: translateY(-2px);
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .navbar {
     padding: 0.8rem 1rem;

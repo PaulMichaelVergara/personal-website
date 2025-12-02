@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 
-// Wrapper component to apply theme class to document element
+
 const ThemeWrapper = ({ children }) => {
   const { isDarkMode } = useTheme();
 
