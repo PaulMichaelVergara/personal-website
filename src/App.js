@@ -2,6 +2,7 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import './App.css';
 import Navbar from './components/Navbar';
+import ContactForm from './components/ContactForm';
 
 function App() {
   return (
@@ -124,20 +125,7 @@ function App() {
               <div className="card contact-card">
                 <div className="contact">
                   <h3>Contact Me</h3>
-                  <form onSubmit={(e) => e.preventDefault()}>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="Email" 
-                      required 
-                    />
-                    <textarea 
-                      name="message" 
-                      placeholder="Your message" 
-                      required
-                    ></textarea>
-                    <button type="submit">Send</button>
-                  </form>
+                  <ContactForm />
                 </div>
               </div>
             </Element>
