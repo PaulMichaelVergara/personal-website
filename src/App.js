@@ -132,7 +132,14 @@ function App() {
                     const message = formData.get('message');
                     
                     try {
-                      const response = await fetch('/api/send-email', {
+                      // Use the full URL in production, relative in development
+                      const apiUrl = process.env.NODE_ENV === 'production' 
+                        ? 'https://your-vercel-app.vercel.app/api/send-email'
+                        : '/api/send-email';
+                      
+                      console.log('Sending to:', apiUrl);
+                      
+                      const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
@@ -141,16 +148,17 @@ function App() {
                       });
                       
                       const data = await response.json();
+                      console.log('Response:', data);
                       
                       if (response.ok) {
                         alert('Message sent successfully!');
                         form.reset();
                       } else {
-                        throw new Error(data.error || 'Something went wrong');
+                        throw new Error(data.error?.message || data.error || 'Something went wrong');
                       }
                     } catch (error) {
                       console.error('Error:', error);
-                      alert('Failed to send message. Please try again.');
+                      alert(`Error: ${error.message || 'Failed to send message. Please try again.'}`);
                     }
                   }}>
                     <input 
