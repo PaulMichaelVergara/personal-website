@@ -1,9 +1,10 @@
 .site-root {
   min-height: 100vh;
-  background: radial-gradient(ellipse at top left, #0b0b0b 0%, #070707 40%), #000;
-  color: #eee;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   padding: 100px 32px 32px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -22,12 +23,13 @@
 }
 
 .profile-card {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.12);
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
   padding: 18px;
   border-radius: 12px;
   text-align: center;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 .profile-img {
@@ -47,7 +49,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(11, 11, 11, 0.9);
+  background: var(--bg-color);
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 15px 32px;
@@ -59,31 +61,33 @@
   font-size: 18px;
 }
 
-.sub { color: #cfcfcf; margin: 6px 0; }
+.sub { color: var(--text-color); opacity: 0.8; margin: 6px 0; transition: var(--transition); }
 .sub.small { font-size: 12px; opacity: 0.9 }
 
 .icons { display:flex; gap:8px; justify-content:center; margin-top:8px }
 .icon { background: rgba(255,255,255,0.03); padding:6px 8px; border-radius:6px; font-size:13px }
 
 .card {
-  background: transparent;
-  border: 2px solid rgba(255,255,255,0.08);
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
   padding: 16px;
   border-radius: 10px;
+  color: var(--text-color);
+  transition: var(--transition);
 }
 
 .tech-card ul, .certifications ul { margin:8px 0 0; padding-left:18px }
 
-.social-list { display:flex; flex-direction:column; gap:10px; margin-top:8px }
+.social-list { display:flex; flex-direction:column; gap:10px; margin-top:8px; margin-bottom: 8px; }
 .social-item { display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit }
-.social-icon { display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center; border-radius:8px; background: rgba(255,255,255,0.02); }
+.social-icon { display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center; border-radius:8px; background: var(--navbar-hover); }
 .social-icon svg { width:18px; height:18px }
-.social-item:hover .social-icon { background: rgba(255,255,255,0.06); transform:translateY(-2px); }
-.social-label { color:#ddd }
+.social-item:hover .social-icon { background: var(--navbar-hover); transform:translateY(-2px); }
+.social-label { color: var(--text-color); }
 
 .main { display:flex; flex-direction:column; gap:20px }
 
-.about p { line-height:1.5; color:#ddd }
+.about p { line-height:1.5; color: var(--text-color); }
 
 .projects .project-list { display:flex; flex-direction:column; gap:12px }
 .project { display:flex; gap:12px; align-items:center }
@@ -104,19 +108,61 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 .proj-meta h4 { margin:0 0 6px; }
-.proj-meta p { margin:0; color:#ddd }
+.proj-meta p { margin:0; color:var(--text-color); opacity: 0.8; }
 
 .cards-row { display:flex; gap:20px; align-items:flex-start; }
 .certifications-card { flex:1; min-width:220px; min-height:205px; }
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1.4;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.certification-item:last-child {
+  border-bottom: none;
+}
+
+.certification-item:hover {
+  color: var(--primary-color);
+}
+
+.certification-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--primary-color);
+}
+
+.certification-item span:last-child {
+  flex: 1;
+}
 .contact-card { flex:1; min-width:240px; min-height:205px; }
 .contact-card .contact { padding: 0; }
 .contact-card h3 { margin: 0 0 8px 0; font-size: 16px; line-height: 1.2; }
 .contact-card .contact form { display:flex; flex-direction:column; gap:6px; margin: 0; }
-.contact-card .contact input, .contact-card .contact textarea { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#eee; padding:8px; border-radius:6px }
-.contact-card .contact button { background:#fff; color:#000; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
+.contact-card .contact input, .contact-card .contact textarea { background:var(--card-bg); border:1px solid var(--card-border); color:var(--text-color); padding:8px; border-radius:6px }
+.contact-card .contact button { background:var(--primary-color); color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; transition:var(--transition) }
+.contact-card .contact button:hover { background:var(--primary-hover) }
 .contact form { display:flex; flex-direction:column; gap:8px }
-.contact input, .contact textarea { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#eee; padding:8px; border-radius:6px }
-.contact button { background:#fff; color:#000; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
+.contact input, .contact textarea { background:var(--card-bg); border:1px solid var(--card-border); color:var(--text-color); padding:8px; border-radius:6px }
+.contact button { background:var(--primary-color); color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; transition: var(--transition); }
+.contact button:hover { background: var(--primary-hover); }
 
 @media (max-width: 880px) {
   .container { grid-template-columns: 1fr; }

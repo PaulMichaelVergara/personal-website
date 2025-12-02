@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Element } from 'react-scroll';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
 
-function App() {
+// Wrapper component to apply theme class to document element
+const ThemeWrapper = ({ children }) => {
+  const { isDarkMode } = useTheme();
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  return children;
+};
+
+function AppContent() {
   return (
     <div className="site-root">
       <Navbar />
@@ -71,6 +87,15 @@ function App() {
                 </span>
                 <span className="social-label">Facebook</span>
               </a>
+
+              <a className="social-item" href="https://mail.google.com/mail/?view=cm&fs=1&to=paulmichaelrvergara@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                <span className="social-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                    <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </span>
+                <span className="social-label">Email</span>
+              </a>
             </div>
           </div>
         </aside>
@@ -101,7 +126,7 @@ function App() {
                   <img src='shelleco.png' alt="project" />
                   <div className="proj-meta">
                     <h4>Telemetry Dashboard</h4>
-                    <p>Live telemetry dashboard for competition use by FEU participants.</p>
+                    <p>Live Car telemetry dashboard for competition use by FEU participants.</p>
                   </div>
                 </div>
               </div>
@@ -112,12 +137,40 @@ function App() {
             <div className="card certifications-card">
               <div className="certifications">
                 <h3>Certifications</h3>
-                <ul>
-                  <li>Information Technology Specialist in JavaScript</li>
-                  <li>Information Technology Specialist in Networking</li>
-                  <li>Information Technology Specialist in HTML and CSS</li>
-                  <li>PMI Project Management Ready </li>
-                </ul>
+                <div className="certifications-list">
+                  <a href="https://drive.google.com/file/d/1t52J2tLgR5Xc6y_yD-HvpslS8SEjDtDE/view?usp=sharing" className="certification-item" target="_blank" rel="noopener noreferrer">
+                    <span className="certification-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M10 6V8H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/>
+                      </svg>
+                    </span>
+                    <span>Information Technology Specialist in JavaScript</span>
+                  </a>
+                  <a href="https://drive.google.com/file/d/1_lnitSQM6iBh9ACp3ucqcklDK0XkT0-e/view?usp=sharing" className="certification-item" target="_blank" rel="noopener noreferrer">
+                    <span className="certification-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M10 6V8H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/>
+                      </svg>
+                    </span>
+                    <span>Information Technology Specialist in Networking</span>
+                  </a>
+                  <a href="https://drive.google.com/file/d/1NjJ3flxAxKyvwJjC4a8Zoca9hV3aZLCy/view?usp=sharing" className="certification-item" target="_blank" rel="noopener noreferrer">
+                    <span className="certification-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M10 6V8H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/>
+                      </svg>
+                    </span>
+                    <span>Information Technology Specialist in HTML and CSS</span>
+                  </a>
+                  <a href="https://drive.google.com/file/d/1ByrpZSoY6-TokSBWLoFPHM1aT8RXbzzZ/view?usp=sharing" className="certification-item" target="_blank" rel="noopener noreferrer">
+                    <span className="certification-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                        <path d="M10 6V8H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"/>
+                      </svg>
+                    </span>
+                    <span>PMI Project Management Ready</span>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -134,6 +187,16 @@ function App() {
       </div>
 
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <ThemeWrapper>
+        <AppContent />
+      </ThemeWrapper>
+    </ThemeProvider>
   );
 }
 
