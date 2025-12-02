@@ -42,9 +42,9 @@ function AppContent() {
             <h3>Tech Stack</h3>
             <div className="cols">
               <ul>
-                <li><strong>Frontend:</strong> HTML, CSS, React</li>
-                <li><strong>Backend:</strong> Node.js, JavaScript</li>
-                <li><strong>DB / Tools:</strong> InfluxDB, Grafana, Vercel</li>
+                <li><strong>Frontend:</strong> HTML, CSS, React, JavaScript</li>
+                <li><strong>Backend:</strong> Node.js, Python, Node-RED </li>
+                <li><strong>DB / Tools:</strong> InfluxDB, Grafana, GitHub, Vercel</li>
               </ul>
             </div>
           </div>
