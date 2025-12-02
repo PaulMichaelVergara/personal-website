@@ -97,12 +97,15 @@
 .project img {
   width: 140px;
   height: 80px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
   border-radius: 8px;
   background: #111;
   transition: transform 0.3s ease, z-index 0.3s ease;
   z-index: 10;
   position: relative;
+  border: 1px solid var(--card-border);
 }
 
 .project img:hover {
