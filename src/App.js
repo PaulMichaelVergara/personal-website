@@ -35,7 +35,7 @@ function AppContent() {
             />
             <h1 className="name">Paul Michael Vergara</h1>
             <p className="sub">Pasig City, Philippines</p>
-            <p className="sub small">Full-stack Developer</p>
+            <p className="sub small">Full-Stack Developer</p>
           </div>
           <div className="card tech-card">
             <h3>Tech Stack</h3>
@@ -127,7 +127,7 @@ function AppContent() {
                   <img src='shelleco.png' alt="project" />
                   <div className="proj-meta">
                     <h4>Telemetry Dashboard</h4>
-                    <p>Live Car telemetry dashboard for competition use by FEU participants.</p>
+                    <p>Real-time car telemetry dashboard for 2026 Shell Eco Marathon Qatar.</p>
                   </div>
                 </div>
               </div>

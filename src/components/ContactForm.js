@@ -40,7 +40,7 @@ const ContactForm = () => {
         <input 
           type="text" 
           name="from_name" 
-          placeholder="Your Name" 
+          placeholder="Name" 
           required 
           className="form-input"
         />
@@ -49,7 +49,7 @@ const ContactForm = () => {
         <input 
           type="email" 
           name="from_email" 
-          placeholder="Your Email" 
+          placeholder="Email" 
           required 
           className="form-input"
         />
