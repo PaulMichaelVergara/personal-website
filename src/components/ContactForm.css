@@ -1,10 +1,10 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   max-width: 500px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .form-group {
@@ -15,13 +15,14 @@
 
 .form-input,
 .form-textarea {
-  padding: 12px 15px;
+  padding: 10px 12px;
   border: 1px solid #444;
-  border-radius: 6px;
+  border-radius: 4px;
   background: #2a2a2a;
   color: #fff;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
 .form-input:focus,
@@ -32,22 +33,25 @@
 }
 
 .form-textarea {
-  min-height: 150px;
+  min-height: 100px;
+  max-height: 150px;
   resize: vertical;
   font-family: inherit;
+  line-height: 1.4;
 }
 
 .submit-btn {
   background: #4a6cf7;
   color: white;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  transition: all 0.3s ease;
-  margin-top: 10px;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+  align-self: flex-start;
 }
 
 .submit-btn:hover:not(:disabled) {
@@ -64,18 +68,22 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .contact-form {
-    padding: 15px;
-    gap: 15px;
+    padding: 8px;
+    gap: 10px;
   }
   
   .form-input,
   .form-textarea {
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .form-textarea {
+    min-height: 80px;
   }
   
   .submit-btn {
-    padding: 10px 20px;
-    font-size: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
