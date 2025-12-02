@@ -109,7 +109,9 @@
 .cards-row { display:flex; gap:20px; align-items:flex-start; }
 .certifications-card { flex:1; min-width:220px; min-height:205px; }
 .contact-card { flex:1; min-width:240px; min-height:205px; }
-.contact-card .contact form { display:flex; flex-direction:column; gap:8px }
+.contact-card .contact { padding: 0; }
+.contact-card h3 { margin: 0 0 8px 0; font-size: 16px; line-height: 1.2; }
+.contact-card .contact form { display:flex; flex-direction:column; gap:6px; margin: 0; }
 .contact-card .contact input, .contact-card .contact textarea { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#eee; padding:8px; border-radius:6px }
 .contact-card .contact button { background:#fff; color:#000; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
 .contact form { display:flex; flex-direction:column; gap:8px }
