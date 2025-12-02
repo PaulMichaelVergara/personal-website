@@ -35,7 +35,7 @@ function AppContent() {
             />
             <h1 className="name">Paul Michael Vergara</h1>
             <p className="sub">Pasig City, Philippines</p>
-            <p className="sub small">Full-Stack Developer</p>
+            <p className="sub small">Web Developer</p>
           </div>
           <div className="card tech-card">
             <h3>Tech Stack</h3>
