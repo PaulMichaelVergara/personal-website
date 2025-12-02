@@ -35,9 +35,8 @@ function AppContent() {
             />
             <h1 className="name">Paul Michael Vergara</h1>
             <p className="sub">Pasig City, Philippines</p>
-            <p className="sub small">BSIT-WMA student | FEU Institute of Technology</p>
+            <p className="sub small">Full-stack Developer</p>
           </div>
-
           <div className="card tech-card">
             <h3>Tech Stack</h3>
             <div className="cols">
@@ -103,9 +102,11 @@ function AppContent() {
         <main className="main">
           <Element name="about" className="section">
             <div className="card about">
-              <h2>About</h2>
+              <h2>About Me</h2>
               <p>
-                I'm an Information Technology student at FEU Institute of Technology looking for an internship opportunity. I build clean, efficient, and user-friendly applications and enjoy learning new technologies.
+                I’m an Information Technology student at FEU Institute of Technology with a strong passion for building clean, efficient, and user-friendly applications. I enjoy exploring new technologies and continuously improving my technical skills through hands-on projects and real-world problem-solving.
+              </p>
+              <p>I approach development with a strong emphasis on precision, structure, and long-term reliability. I’m committed to understanding systems at both the technical and architectural level, ensuring that every solution I work on is efficient, scalable, and well-designed.
               </p>
             </div>
           </Element>
