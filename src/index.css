@@ -1,5 +1,5 @@
 :root {
-  /* Light theme (default) */
+  
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
   --card-bg: #f8f9fa;
@@ -51,7 +51,6 @@ code {
   font-size: 0.9em;
 }
 
-/* Card styles */
 .card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -60,7 +59,6 @@ code {
   transition: var(--transition);
 }
 
-/* Navbar theming */
 .navbar {
   background: var(--navbar-bg) !important;
   color: var(--navbar-text) !important;
@@ -74,12 +72,10 @@ code {
   background: var(--navbar-hover) !important;
 }
 
-/* Form elements */
 input, textarea, button {
   transition: var(--transition) !important;
 }
 
-/* Smooth transitions */
 a, button, .card, .nav-link {
   transition: var(--transition);
 }

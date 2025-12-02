@@ -36,7 +36,6 @@ function AppContent() {
             <h1 className="name">Paul Michael Vergara</h1>
             <p className="sub">Pasig City, Philippines</p>
             <p className="sub small">BSIT-WMA student | FEU Institute of Technology</p>
-            {/* profile small icons removed to avoid duplicate text */}
           </div>
 
           <div className="card tech-card">
