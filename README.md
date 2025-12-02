@@ -11,8 +11,8 @@ Projects Section: Explore my projects in the projects section. Each project is d
 Connect with me on LinkedIn and GitHub. Click on the social icons to visit my profiles.
 
 # Tech Stack
-React
-Node.js
-JavaScript
-CSS
-HTML
+- React
+- Node.js
+- JavaScript
+- CSS
+- HTML
