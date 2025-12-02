@@ -124,50 +124,7 @@ function App() {
               <div className="card contact-card">
                 <div className="contact">
                   <h3>Contact Me</h3>
-                  <form onSubmit={async (e) => {
-                    e.preventDefault();
-                    const form = e.target;
-                    const formData = new FormData(form);
-                    const email = formData.get('email');
-                    const message = formData.get('message');
-                    
-                    try {
-                      // First, test if the API is reachable
-                      const testResponse = await fetch('/api/test');
-                      const testData = await testResponse.json();
-                      console.log('Test API response:', testData);
-                      
-                      if (!testResponse.ok) {
-                        throw new Error('API test failed. Please check the console for details.');
-                      }
-                      
-                      // If test passes, send the email
-                      const response = await fetch('/api/send-email', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ email, message }),
-                      });
-                      
-                      const data = await response.json();
-                      console.log('Email API response:', data);
-                      
-                      if (response.ok) {
-                        alert('Message sent successfully!');
-                        form.reset();
-                      } else {
-                        throw new Error(data.error?.message || data.error || 'Failed to send message');
-                      }
-                    } catch (error) {
-                      console.error('Error details:', {
-                        error: error.toString(),
-                        stack: error.stack,
-                        response: error.response
-                      });
-                      alert(`Error: ${error.message || 'Failed to send message. Please check the console for details.'}`);
-                    }
-                  }}>
+                  <form onSubmit={(e) => e.preventDefault()}>
                     <input 
                       type="email" 
                       name="email" 
