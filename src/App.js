@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Element } from 'react-scroll';
+import { Element, scroller } from 'react-scroll';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
+
 
 
 const ThemeWrapper = ({ children }) => {
@@ -22,6 +23,19 @@ const ThemeWrapper = ({ children }) => {
 
 function AppContent() {
   const { isDarkMode } = useTheme();
+  
+  // Prevent auto-scrolling on page load
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Scroll to top immediately when component mounts
+      window.scrollTo(0, 0);
+      
+      // Add event listener to prevent scroll restoration
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+    }
+  }, []);
   return (
     <div className="site-root">
       <div className="honeycomb-bg right">
@@ -106,7 +120,7 @@ function AppContent() {
         </aside>
 
         <main className="main">
-          <Element name="about" className="section">
+          <Element name="about" className="section" id="about" style={{scrollMarginTop: '120px'}}>
             <div className="card about">
               <h2>About Me</h2>
               <p>
@@ -117,7 +131,7 @@ function AppContent() {
             </div>
           </Element>
 
-          <Element name="projects" className="section">
+          <Element name="projects" className="section" id="projects" style={{scrollMarginTop: '120px'}}>
             <div className="card projects">
               <h2>Projects</h2>
               <div className="project-list">
@@ -181,7 +195,7 @@ function AppContent() {
               </div>
             </div>
 
-            <Element name="contact" className="section">
+            <Element name="contact" className="section" id="contact" style={{scrollMarginTop: '120px'}}>
               <div className="card contact-card">
                 <div className="contact">
                   <h3>Contact Me</h3>

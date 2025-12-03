@@ -47,6 +47,8 @@
   display: block;
   margin: 0 auto 12px;
   background: linear-gradient(to bottom, #0b0b0b, #1a1a1a);
+  transition: none !important;
+  transform: none !important;
 }
 
 .profile-img.navbar {
@@ -105,21 +107,19 @@
 .projects .project-list { display:flex; flex-direction:column; gap:12px }
 .project { display:flex; gap:12px; align-items:center }
 .project img {
-  width: 140px;
-  height: 80px;
-  object-fit: contain;
-  object-position: center;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
   padding: 4px;
   border-radius: 8px;
   background: #111;
-  transition: transform 0.3s ease, z-index 0.3s ease;
   z-index: 10;
   position: relative;
   border: 1px solid var(--card-border);
 }
 
 .project img:hover {
-  transform: scale(3);
   z-index: 100;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
