@@ -23,13 +23,18 @@
 }
 
 .profile-card {
-  background: var(--card-bg);
-  border: 2px solid var(--card-border);
-  padding: 18px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 24px;
+  border-radius: 20px;
   text-align: center;
   overflow: hidden;
   transition: var(--transition);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .profile-img {
@@ -68,12 +73,17 @@
 .icon { background: rgba(255,255,255,0.03); padding:6px 8px; border-radius:6px; font-size:13px }
 
 .card {
-  background: var(--card-bg);
-  border: 2px solid var(--card-border);
-  padding: 16px;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 24px;
   color: var(--text-color);
   transition: var(--transition);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .tech-card h3, .social-card h3 { margin: 0 0 8px 0; line-height: 1.2; }
@@ -178,6 +188,59 @@
   .cards-row { flex-direction:column }
 }
 
+
+/* Honeycomb background images */
+.honeycomb-bg {
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+/* Normal colors in dark mode */
+[data-theme='dark'] .honeycomb-bg {
+  filter: invert(0);
+}
+
+/* Right honeycomb */
+.honeycomb-bg.right {
+  right: 0;
+}
+
+/* Left honeycomb */
+.honeycomb-bg.left {
+  left: 0;
+}
+
+.honeycomb-img {
+  position: fixed;
+  bottom: 0;
+  width: 300px;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Position right honeycomb */
+.honeycomb-bg.right .honeycomb-img {
+  right: 0;
+}
+
+/* Position left honeycomb */
+.honeycomb-bg.left .honeycomb-img {
+  left: 0;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .honeycomb-img {
+    width: 200px;
+  }
+}
 
 .card {
   transition: all 0.3s ease;

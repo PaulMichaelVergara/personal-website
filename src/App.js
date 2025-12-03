@@ -24,6 +24,12 @@ function AppContent() {
   const { isDarkMode } = useTheme();
   return (
     <div className="site-root">
+      <div className="honeycomb-bg right">
+        <img src="/honeycombd.png" alt="Honeycomb background right" className="honeycomb-img" />
+      </div>
+      <div className="honeycomb-bg left">
+        <img src="/honeycombd1.png" alt="Honeycomb background left" className="honeycomb-img left" />
+      </div>
       <Navbar />
       <div className="container">
         <aside className="sidebar">
