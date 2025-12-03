@@ -77,7 +77,6 @@
   opacity: 0.8;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .contact-form {
     padding: 0 10px;

@@ -188,8 +188,6 @@
   .cards-row { flex-direction:column }
 }
 
-
-/* Honeycomb background images */
 .honeycomb-bg {
   position: fixed;
   bottom: 0;
@@ -200,17 +198,14 @@
   transition: filter 0.3s ease;
 }
 
-/* Normal colors in dark mode */
 [data-theme='dark'] .honeycomb-bg {
   filter: invert(0);
 }
 
-/* Right honeycomb */
 .honeycomb-bg.right {
   right: 0;
 }
 
-/* Left honeycomb */
 .honeycomb-bg.left {
   left: 0;
 }
@@ -225,17 +220,14 @@
   user-select: none;
 }
 
-/* Position right honeycomb */
 .honeycomb-bg.right .honeycomb-img {
   right: 0;
 }
 
-/* Position left honeycomb */
 .honeycomb-bg.left .honeycomb-img {
   left: 0;
 }
-
-/* Adjust for smaller screens */
+  
 @media (max-width: 768px) {
   .honeycomb-img {
     width: 200px;
