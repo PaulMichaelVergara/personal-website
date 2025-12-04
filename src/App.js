@@ -4,6 +4,7 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css';
 import Navbar from './components/Navbar';
 import ContactForm from './components/ContactForm';
+import { Analytics } from "@vercel/analytics/react"
 
 
 const ThemeWrapper = ({ children }) => {
